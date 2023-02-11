@@ -10,11 +10,19 @@ class Ball(Turtle):
         self.speed('fastest')
         self.shapesize(stretch_wid=0.5, stretch_len=0.5)
         self.penup()
-        self.goto(x=0, y=0)
-        self.move_the_ball()
+        #self.goto(x=0, y=0)
+        #self.move_the_ball()
+        self.x_move = 10
+        self.y_move = 10
 
 
     def move_the_ball(self):
-        initial_y = self.ycor() + 10
-        initial_x = self. xcor() + 10
+        initial_y = self.ycor() + self.y_move
+        initial_x = self. xcor() + self.x_move
+
         self.goto(initial_x, initial_y)
+
+
+    def bounce(self):
+        self.y_move *= -1
+
